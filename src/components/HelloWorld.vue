@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-blue-500 text-white">
-    <p class="bg-grey-400 text-red">{{ msg }}</p>
+  <div>
+    <p>{{ msg }}</p>
   </div>
 </template>
 
