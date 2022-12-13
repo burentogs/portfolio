@@ -8,6 +8,9 @@ module.exports = {
         "background-image": "url('../assets/cs-image.svg')",
         "background-image-sm": "url('../assets/cs-image-sm.svg')",
       },
+      colors: {
+        "cs-green": "#4C5844",
+      },
     },
   },
   plugins: [],
