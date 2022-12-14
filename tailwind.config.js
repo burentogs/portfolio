@@ -10,6 +10,7 @@ module.exports = {
       },
       colors: {
         "cs-green": "#4C5844",
+        "cs-dark-green": "#3e4637",
       },
     },
   },

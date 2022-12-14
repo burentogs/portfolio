@@ -5,9 +5,7 @@
     >
       <div class="flex h-screen justify-center items-center">
         <div class="text-center bg-blue-400">
-          <router-view
-            class="bg-cs-green border border-zinc-400 border-r-zinc-800 border-b-zinc-800"
-          />
+          <router-view class="bg-cs-green border light-top-border" />
         </div>
       </div>
 
