@@ -10,6 +10,10 @@ import { faToggleOn, faToggleOff } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add({ faToggleOn, faToggleOff });
+document.documentElement.style.setProperty(
+  "--vh",
+  window.innerHeight * 0.01 + "px"
+);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)

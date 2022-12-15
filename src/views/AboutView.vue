@@ -1,5 +1,5 @@
 <template>
-  <div class="w-96 relative" style="width: 500px; height: 600px">
+  <div class="relative md:w-96 w-80 mt-24">
     <div class="block p-1">
       <div class="font-mono text-left text-white">
         <p>About Burentugs.J</p>
@@ -11,11 +11,11 @@
         <a
           href="javascript:void(0)"
           @click="changeTab(event, 0)"
-          class="light-tab-border bg-cs-green border-b-0 pt-2 py-1 pb-1 text-yellow-400 border focus:outline-none"
+          class="light-tab-border bg-cs-green border-b-0 pt-2 py-1 pb-1 cs-yellow border focus:outline-none"
           >Lifetime</a
         >
         <a
-          href="javascript:void(0)"
+          href=" javascript:void(0)"
           @click="changeTab(event, 1)"
           class="light-tab-border ml py-1 text-white border border-b-0 focus:outline-none"
           >Tab 2</a
@@ -28,21 +28,22 @@
         >
       </div>
       <!-- Tab Panels -->
-      <div id="tab-panels" class="border light-top-border h-full">
-        <div class="text-white pt-5">
-          <div class="flex mx-5">
-            <p class="w-1/4">Categories</p>
+      <div id="tab-panels" class="border light-top-border h-96 p-5">
+        <div class="text-white">
+          <div class="flex">
+            <p class="w-1/4">Choose</p>
             <div class="w-3/4 text-left">
               <select
                 v-model="selected"
                 class="bg-cs-dark-green dark-top-border w-3/5"
               >
-                <option value="now">cs_Present</option>
-                <option value="teenage">de_Teenage</option>
-                <option value="child">cs_Child</option>
+                <option value="now">Present</option>
+                <option value="teenage">Teenage</option>
+                <option value="child">Child</option>
               </select>
             </div>
           </div>
+          <hr class="my-5" />
           <div class="">
             <div v-if="selected === 'now'"><Dropdown-now /></div>
             <div v-if="selected === 'teenage'"><Dropdown-teen /></div>
@@ -70,9 +71,9 @@
           </p>
         </div>
       </div>
-      <div class="text-white text-end items-end bottom-0 right-0 absolute">
-        <button class="cs-button w-20 text-left pl-1 mr-2">Cancel</button>
-        <button class="cs-button w-20 text-left pl-1 mr-2">Cancel</button>
+      <div class="text-white text-end items-end mt-1">
+        <button class="cs-button">Start</button>
+        <button class="cs-button">Cancel</button>
       </div>
     </div>
   </div>
@@ -102,7 +103,7 @@ export default {
       // Remove the active utility classes from all tabs (bg-white, text-blue-600)
       // And hide all tab content (with the "hidden" utility)
       for (var i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].classList.remove("text-yellow-400");
+        tabButtons[i].classList.remove("cs-yellow");
         tabButtons[i].classList.remove("pt-2");
         tabButtons[i].classList.remove("bg-cs-green");
         tabButtons[i].classList.add("border-b-0");
@@ -115,7 +116,7 @@ export default {
       tabButtons[index].classList.remove("text-white");
       tabButtons[index].classList.add("bg-cs-green");
       tabButtons[index].classList.add("border-b-0");
-      tabButtons[index].classList.add("text-yellow-400");
+      tabButtons[index].classList.add("cs-yellow");
       tabButtons[index].classList.add("pt-2");
       tabPanels[index].classList.remove("hidden");
     },

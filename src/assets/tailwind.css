@@ -2,22 +2,29 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root{
+    --cs-light-border: #889180;
+    --cs-dark-border: #27272a;
+    --cs-yellow: #facc15;
+    --cs-green: #4C5844;
+}
 @layer utilities {
+    
     .dark-top-border{
-        border-top: 1px solid #27272a;
-        border-left: 1px solid #27272a;
-        border-bottom: 1px solid #a1a1aa;
-        border-right: 1px solid #a1a1aa;
+        border-top: 1px solid var(--cs-dark-border);
+        border-left: 1px solid var(--cs-dark-border);
+        border-bottom: 1px solid var(--cs-light-border);
+        border-right: 1px solid var(--cs-light-border);
     }
     .light-top-border{
-        border-top: 1px solid #a1a1aa;
-        border-left: 1px solid #a1a1aa;
-        border-bottom: 1px solid #27272a;
-        border-right: 1px solid #27272a;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
     }
     .light-tab-border{
-        border-top: 1px solid #a1a1aa;
-        border-left: 1px solid #a1a1aa;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
         border-right: 2px solid black;
         padding-right: 20px;
         padding-left: 4px;
@@ -28,12 +35,89 @@
         line-height: 1.5rem/* 24px */;
     }
     .cs-yellow{
-        color: #facc15;
+        color: var(--cs-yellow);
+    }
+    .main-menu{
+        padding-top: 0.25rem;
+        padding-left: 2.25rem;
     }
     .cs-button{
-        border-top: 1px solid #a1a1aa;
-        border-left: 1px solid #a1a1aa;
-        border-bottom: 1px solid #27272a;
-        border-right: 1px solid #27272a;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
+        text-align: left;
+        margin-right: 0.5rem;
+        padding-left: 0.25rem;
+        width: 5rem;
     }
+    .cs-button:active{
+        border-top: 1px solid var(--cs-dark-border);
+        border-left: 1px solid var(--cs-dark-border);
+        border-bottom: 1px solid var(--cs-light-border);
+        border-right: 1px solid var(--cs-light-border);
+        padding-left: 0.50rem;
+        color: var(--cs-yellow);
+    }
+    hr{
+        border-bottom: 1px solid var(--cs-light-border);
+        border-top: 1px solid var(--cs-dark-border);
+    }
+    .logo-horizontal {
+        position: absolute;
+        bottom: 0;
+        padding-left: 2rem;
+        padding-bottom: 1.5rem;
+        z-index: 0;
+    }
+    .navigation{
+        position: absolute;
+        padding-left: 2rem;
+        bottom: 7.5rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: left;
+    }
+    @media screen and (max-width: 640px) {
+        .navigation{
+            display: grid;
+            grid-auto-flow: column;
+            position: absolute;
+            bottom: 0;
+            padding-left: 0;
+            gap: 0;
+            text-align: center;
+            width: 100%;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            
+        }
+        .logo-horizontal {
+            padding-left: 0;
+            width: 100%;
+            justify-content: center;
+            align-items: start;
+            display: grid;
+            top: 0;
+        }
+        .main-menu{
+            padding-left: 0.1rem;
+            padding-right: 0.1rem;
+            text-size-adjust: 10%;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    }
+    .h-screen {
+
+        height: calc(var(--vh, 1vh) * 100);
+    }
+    @media screen and (min-width: 640px) {
+        .h-screen {
+            height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        }
+    }
+    
 }
