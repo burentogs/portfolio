@@ -15,28 +15,46 @@
       >
         <router-link
           :to="{ name: 'about' }"
-          class="hover:cs-yellow"
-          active-class="cs-yellow"
-          >About</router-link
-        >
+          class="hover:cs-yellow menu-out-transition"
+          active-class="menu-active"
+          ><span class="icon">
+            <font-awesome-icon class="menu-icon" :icon="['fas', 'user']" />
+          </span>
+          <span class="text">About</span>
+        </router-link>
         <router-link
           :to="{ name: 'project' }"
-          class="hover:cs-yellow"
-          active-class="cs-yellow"
-          >Work</router-link
-        >
+          class="hover:cs-yellow menu-out-transition"
+          active-class="menu-active"
+          ><span class="icon">
+            <font-awesome-icon
+              class="menu-icon"
+              :icon="['fas', 'briefcase']"
+            /> </span
+          ><span class="text">Project</span>
+        </router-link>
         <router-link
           :to="{ name: 'contact' }"
-          class="hover:cs-yellow"
-          active-class="cs-yellow"
-          >Contact</router-link
-        >
+          class="hover:cs-yellow menu-out-transition"
+          active-class="menu-active"
+          ><span class="icon">
+            <font-awesome-icon
+              class="menu-icon"
+              :icon="['fas', 'paper-plane']"
+            /> </span
+          ><span class="text">Contact</span>
+        </router-link>
         <router-link
-          :to="{ name: 'quit' }"
-          class="hover:cs-yellow"
-          active-class="cs-yellow"
-          >Quit</router-link
-        >
+          :to="{ name: 'quiz' }"
+          class="hover:cs-yellow menu-out-transition"
+          active-class="menu-active"
+          ><span class="icon">
+            <font-awesome-icon
+              class="menu-icon"
+              :icon="['fas', 'gamepad']"
+            /> </span
+          ><span class="text">Quiz</span>
+        </router-link>
       </nav>
       <div class="logo-horizontal">
         <img src="./assets/logo-horizontal.svg" alt="logo" />
@@ -53,11 +71,6 @@ export default {
     };
   },
   mounted() {},
-  methods: {
-    playBeepSound() {
-      const beep = new Audio(require("@/assets/beep.mp3"));
-      beep.play();
-    },
-  },
+  methods: {},
 };
 </script>

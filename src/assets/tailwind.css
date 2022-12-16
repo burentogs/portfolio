@@ -80,34 +80,65 @@
         gap: 0.5rem;
         text-align: left;
     }
+    .menu-icon{
+        margin-top: 0.25rem;
+        width: 4rem;
+        height:2rem;
+        padding: 0.25rem;
+        border-radius: 2rem;
+        background-color: var(--cs-green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
+    }
+    .menu-active{
+        color: var(--cs-yellow);
+    }
+    @media (min-width: 641px) {
+        span.icon {display:none}
+        span.text {display:inline-block}
+    }
+    
+    @media (max-width: 640px) {
+        span.icon {display:inline-block}
+        span.text {display:none}
+    }
     @media screen and (max-width: 640px) {
-        .navigation{
-            display: grid;
-            grid-auto-flow: column;
-            position: absolute;
+        .menu-active{
+            transition: ease-in-out 0.5s;
+            transform: translateY(-30%);
             bottom: 0;
+            border-radius: 1rem;
+        }
+        .menu-out-transition{
+            transition: ease-out 0.5s;
+        }
+        .navigation a{
+            flex: 1;
+        }
+        .navigation{
             padding-left: 0;
-            gap: 0;
+            position: fixed;
+            bottom: 0;
             text-align: center;
+            display: flex;
+            flex-direction: row;
+            gap: 0;
             width: 100%;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            
+            align-items: stretch;
         }
         .logo-horizontal {
             padding-left: 0;
             width: 100%;
+            padding-bottom: 0;
             justify-content: center;
             align-items: start;
             display: grid;
             top: 0;
-        }
-        .main-menu{
-            padding-left: 0.1rem;
-            padding-right: 0.1rem;
-            text-size-adjust: 10%;
-            align-items: center;
-            justify-content: center;
-            
         }
     }
     .h-screen {

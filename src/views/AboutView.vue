@@ -12,7 +12,7 @@
           href="javascript:void(0)"
           @click="changeTab(event, 0)"
           class="light-tab-border bg-cs-green border-b-0 pt-2 py-1 pb-1 cs-yellow border focus:outline-none"
-          >Lifetime</a
+          >Story</a
         >
         <a
           href=" javascript:void(0)"
