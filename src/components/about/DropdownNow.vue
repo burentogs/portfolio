@@ -1,39 +1,88 @@
 <template>
-  <div class="bg-cs-dark-green h-fit">
-    If you have a parent element with the class h-full relative and a child
-    element with the class h-full, and the child element is not fitting within
-    the parent element and is overflowing, there are a few possible solutions
-    you can try: Make sure that the parent element has a defined width. The
-    h-full class sets the element's height to be 100% of the height of its
-    parent element, but if the parent element does not have a defined width, it
-    will not constrain the child element's width. Make sure that the parent
-    element has the overflow-hidden class. This will hide any content that
-    overflows the parent element. Use the w-full class on the child element to
-    set its width to be 100% of the width of its parent element. This will
-    ensure that the child element takes up the full width of the parent element,
-    even if its content overflows the parent element's height. Use the
-    overflow-auto class on the parent element to add scrollbars to the parent
-    element if its content overflows its bounds. This will allow the user to
-    scroll to see the content that overflows the parent element. If the child
-    element has a fixed height and is overflowing the parent element's height,
-    you can use the overflow-y-scroll class on the child element to add a
-    overflows the parent element. Use the w-full class on the child element to
-    set its width to be 100% of the width of its parent element. This will
-    ensure that the child element takes up the full width of the parent element,
-    even if its content overflows the parent element's height. Use the
-    overflow-auto class on the parent element to add scrollbars to the parent
-    element if its content overflows its bounds. This will allow the user to
-    scroll to see the content that overflows the parent element. If the child
-    element has a fixed height and is overflowing the parent element's height,
-    you can use the overflow-y-scroll class on the child element to add a
-    overflows the parent element. Use the w-full class on the child element to
-    set its width to be 100% of the width of its parent element. This will
-    ensure that the child element takes up the full width of the parent element,
-    even if its content overflows the parent element's height. Use the
-    overflow-auto class on the parent element to add scrollbars to the parent
-    element if its content overflows its bounds. This will allow the user to
-    scroll to see the content that overflows the parent element. If the child
-    element has a fixed height and is overflowing the parent element's height,
-    you can use the overflow-y-scroll class on the child element to add a
+  <div class="bg-cs-dark-green h-full">
+    <div
+      class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col"
+    >
+      <div
+        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="sm:w-16 sm:h-16 w-10 h-10"
+          viewBox="0 0 24 24"
+        >
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-white text-lg title-font font-medium mb-2">
+          Shooting Stars
+        </h2>
+        <p class="leading-relaxed text-base">
+          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+          taxidermy. Gastropub indxgo juice poutine.
+        </p>
+        <a class="mt-3 text-indigo-400 inline-flex items-center"
+          >Learn More
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col"
+    >
+      <div
+        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="sm:w-16 sm:h-16 w-10 h-10"
+          viewBox="0 0 24 24"
+        >
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+      </div>
+      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+        <h2 class="text-white text-lg title-font font-medium mb-2">
+          Shooting Stars
+        </h2>
+        <p class="leading-relaxed text-base">
+          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+          taxidermy. Gastropub indxgo juice poutine.
+        </p>
+        <a class="mt-3 text-indigo-400 inline-flex items-center"
+          >Learn More
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
 </template>

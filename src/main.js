@@ -10,6 +10,8 @@ import {
   faBriefcase,
   faPaperPlane,
   faGamepad,
+  // faCaretUp,
+  // faCaretDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

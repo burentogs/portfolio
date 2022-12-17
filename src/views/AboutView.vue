@@ -24,7 +24,7 @@
         v-for="(tab, index) in tabs"
         :key="index"
         :aria-current="active_tab === index"
-        class="tabBlock-pane h-full relative mb-1 overflow-hidden"
+        class="tabBlock-pane h-full relative overflow-hidden"
         v-show="active_tab === index"
       >
         <!-- Story tab -->
@@ -42,9 +42,9 @@
               </select>
             </div>
           </div>
-          <hr class="my-6" />
+          <hr />
 
-          <div v-if="selected === 'now'" class="h-full overflow-scroll">
+          <div v-if="selected === 'now'" class="overflow-auto about-view-drop">
             <Dropdown-now />
           </div>
           <div v-if="selected === 'teenage'"><Dropdown-teen /></div>
