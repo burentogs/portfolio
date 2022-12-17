@@ -1,0 +1,83 @@
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+$primary: darkorange;
+$primary-faint: mix($primary, #fff, 50%);
+$cs-light-border: #889180;
+$cs-dark-border: #27272a;
+$cs-yellow: #facc15;
+$cs-green: #4C5844;
+.tabBlock {
+  &-tabs {
+    list-style: none;
+
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+
+  &-tab {
+    background-color: $cs-green;
+    border-top: 1px solid $cs-light-border;
+    border-left: 1px solid $cs-light-border;
+    border-right: 2px solid black;
+    color: white;
+    display: flex;
+    align-items: center;
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+    transition: 0.1s ease-in-out;
+    text-decoration: none;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 4px;
+      position: absolute;
+    }
+    &::after {
+      background-color: transparent;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+    }
+
+    &.is-active {
+      position: relative;
+      color: $cs-yellow;
+      z-index: 1;
+      &::before {
+        background-color: $primary;
+      }
+
+      &::after {
+        background-color: $cs-green;
+      }
+    }
+
+    svg {
+      height: 1.2rem;
+      width: 1.2rem;
+      margin-right: 0.5rem;
+      pointer-events: none;
+      fill: currentcolor;
+    }
+  }
+
+  &-content {
+    border-top: 1px solid var(--cs-light-border);
+    border-left: 1px solid var(--cs-light-border);
+    border-bottom: 1px solid var(--cs-dark-border);
+    border-right: 1px solid var(--cs-dark-border);
+    padding: 1rem;
+    height: 100%;
+  }
+}

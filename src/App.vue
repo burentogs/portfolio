@@ -3,14 +3,12 @@
     <div
       class="sm:bg-background-image bg-no-repeat bg-cover h-screen bg-background-image-sm relative"
     >
-      <div class="flex justify-center">
-        <router-view
-          class="bg-cs-green border light-top-border mt-16 sm:mt-28 h-fit absolute z-10"
-        />
+      <div class="panel">
+        <router-view />
       </div>
 
       <nav
-        class="navigation text-2xl text-white sm:text-xl"
+        class="navigation text-2xl text-white sm:text-xl z-20"
         @click="playBeepSound"
       >
         <router-link

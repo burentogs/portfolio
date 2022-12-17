@@ -1,35 +1,34 @@
 <template>
-  <div class="relative md:w-96 w-80 mt-24">
-    <div class="block p-1">
-      <div class="font-mono text-left text-white">
-        <p>About Burentugs.J</p>
-      </div>
-    </div>
-    <div class="m-1 font-mono h-full">
-      <!-- Tab Buttons -->
-      <div id="tab-buttons" class="text-left">
+  <div class="about-view text-white">
+    <p class="pb-1">&nbsp; About Burentugs.J</p>
+    <ul class="tabBlock-tabs">
+      <li
+        v-for="(tab, index) in tabs"
+        :key="index"
+        :aria-setsize="tabs.length"
+        :aria-posinet="index + 1"
+      >
         <a
-          href="javascript:void(0)"
-          @click="changeTab(event, 0)"
-          class="light-tab-border bg-cs-green border-b-0 pt-2 py-1 pb-1 cs-yellow border focus:outline-none"
-          >Story</a
+          href="javascript:void(0);"
+          class="tabBlock-tab"
+          :class="active_tab === index ? 'is-active' : ''"
+          :aria-selected="active_tab === index"
+          @click="changeTab(index)"
         >
-        <a
-          href=" javascript:void(0)"
-          @click="changeTab(event, 1)"
-          class="light-tab-border ml py-1 text-white border border-b-0 focus:outline-none"
-          >Tab 2</a
-        >
-        <a
-          href="javascript:void(0)"
-          @click="changeTab(event, 2)"
-          class="light-tab-border ml py-1 text-white border-r-2 border border-b-0 focus:outline-none"
-          >Tab 3</a
-        >
-      </div>
-      <!-- Tab Panels -->
-      <div id="tab-panels" class="border light-top-border h-96 p-5">
-        <div class="text-white">
+          {{ tab.tab_title }}
+        </a>
+      </li>
+    </ul>
+    <div class="tabBlock-content overflow-hidden">
+      <div
+        v-for="(tab, index) in tabs"
+        :key="index"
+        :aria-current="active_tab === index"
+        class="tabBlock-pane h-full relative mb-1 overflow-hidden"
+        v-show="active_tab === index"
+      >
+        <!-- Story tab -->
+        <div v-if="active_tab === 0" class="h-full w-full relative">
           <div class="flex">
             <p class="w-1/4">Choose</p>
             <div class="w-3/4 text-left">
@@ -37,44 +36,31 @@
                 v-model="selected"
                 class="bg-cs-dark-green dark-top-border w-3/5"
               >
-                <option value="now">Present</option>
+                <option value="now">Now</option>
                 <option value="teenage">Teenage</option>
                 <option value="child">Child</option>
               </select>
             </div>
           </div>
-          <hr class="my-5" />
-          <div class="">
-            <div v-if="selected === 'now'"><Dropdown-now /></div>
-            <div v-if="selected === 'teenage'"><Dropdown-teen /></div>
-            <div v-if="selected === 'child'"><Dropdown-child /></div>
+          <hr class="my-6" />
+
+          <div v-if="selected === 'now'" class="h-full overflow-scroll">
+            <Dropdown-now />
           </div>
+          <div v-if="selected === 'teenage'"><Dropdown-teen /></div>
+          <div v-if="selected === 'child'"><Dropdown-child /></div>
         </div>
+        <!-- Story tab1 -->
 
-        <div class="hidden">
-          <h1 class="text-2xl text-red-500">Tab 2 Content</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
-            doloremque.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
-            doloremque.
-          </p>
-        </div>
+        <div v-if="active_tab === 1">2</div>
+        <!-- Story tab2 -->
 
-        <div class="hidden">
-          <h1 class="text-2xl text-purple-600">Tab 3 Content</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
-            doloremque.
-          </p>
-        </div>
+        <div v-if="active_tab === 2">3</div>
       </div>
-      <div class="text-white text-end items-end mt-1">
-        <button class="cs-button">Start</button>
-        <button class="cs-button">Cancel</button>
-      </div>
+    </div>
+    <div class="text-white text-end items-end mt-1">
+      <button type="button" class="cs-button">Start</button>
+      <button type="button" class="cs-button">Cancel</button>
     </div>
   </div>
 </template>
@@ -85,41 +71,37 @@ import DropdownTeen from "../components/about/DropdownTeen.vue";
 import DropdownNow from "../components/about/DropdownNow.vue";
 export default {
   name: "AboutView",
+
   data() {
     return {
+      active_tab: 0,
       selected: "now",
+      tabs: [
+        {
+          tab_title: "Story",
+        },
+        {
+          tab_title: "Vue.js",
+        },
+        {
+          tab_title: "Nuxt.js",
+        },
+      ],
     };
   },
-  components: {
-    "Dropdown-child": DropdownChild,
-    "Dropdown-teen": DropdownTeen,
-    "Dropdown-now": DropdownNow,
-  },
   methods: {
-    changeTab(event, index) {
-      var tabButtons = document.getElementById("tab-buttons").children;
-      var tabPanels = document.getElementById("tab-panels").children;
-
-      // Remove the active utility classes from all tabs (bg-white, text-blue-600)
-      // And hide all tab content (with the "hidden" utility)
-      for (var i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].classList.remove("cs-yellow");
-        tabButtons[i].classList.remove("pt-2");
-        tabButtons[i].classList.remove("bg-cs-green");
-        tabButtons[i].classList.add("border-b-0");
-        tabButtons[i].classList.add("text-white");
-        tabPanels[i].classList.add("hidden");
-      }
-
-      // Add the active utility classes to the currently active tab (bg-white, text-blue-600)
-      // And show the current tab content (remove the "hidden" utility)
-      tabButtons[index].classList.remove("text-white");
-      tabButtons[index].classList.add("bg-cs-green");
-      tabButtons[index].classList.add("border-b-0");
-      tabButtons[index].classList.add("cs-yellow");
-      tabButtons[index].classList.add("pt-2");
-      tabPanels[index].classList.remove("hidden");
+    changeTab(index) {
+      this.active_tab = index;
     },
+  },
+  components: {
+    DropdownChild,
+    DropdownTeen,
+    DropdownNow,
   },
 };
 </script>
+
+<style lang="scss">
+@import "../assets/tabs.scss";
+</style>
