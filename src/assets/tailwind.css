@@ -37,6 +37,9 @@
     .cs-yellow{
         color: var(--cs-yellow);
     }
+    .cs-light-green{
+        color: var(--cs-light-border);
+    }
     .main-menu{
         padding-top: 0.25rem;
         padding-left: 2.25rem;
@@ -47,7 +50,7 @@
         border-bottom: 1px solid var(--cs-dark-border);
         border-right: 1px solid var(--cs-dark-border);
         text-align: left;
-        margin-right: 0.5rem;
+        margin-left: 0.5rem;
         padding-left: 0.25rem;
         width: 5rem;
     }
@@ -92,11 +95,55 @@
         z-index: 20;
     }
     .about-view{
+        transition: opacity 0.3s;
         display: flex;
         position: relative;
         flex-direction: column;
+        color: white;
         padding: 0.25rem;
         height: 80%;
+        width: 30%;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
+        background-color: var(--cs-green);
+    }
+    .project-view{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        color: white;
+        padding: 0.25rem;
+        height: 60%;
+        width: 50%;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
+        background-color: var(--cs-green);
+    }
+    .contact-view{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        color: white;
+        padding: 0.25rem;
+        height: 60%;
+        width: 50%;
+        border-top: 1px solid var(--cs-light-border);
+        border-left: 1px solid var(--cs-light-border);
+        border-bottom: 1px solid var(--cs-dark-border);
+        border-right: 1px solid var(--cs-dark-border);
+        background-color: var(--cs-green);
+    }
+    .services-view{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        color: white;
+        padding: 0.25rem;
+        height: fit-content;
         width: 50%;
         border-top: 1px solid var(--cs-light-border);
         border-left: 1px solid var(--cs-light-border);
@@ -127,6 +174,11 @@
     }
     span.icon {display:none}
     span.text {display:inline-block}
+    @media screen and (max-width: 1024px) {
+        .about-view{
+            width: 50%;
+        }
+    }
     @media screen and (max-width: 640px) {
         hr{
             margin-top: 1rem/* 24px */;
@@ -136,8 +188,20 @@
             height: 80%;
             width: 90%;
         }
+        .project-view{
+            height: 80%;
+            width: 90%;
+        }
+        .contact-view{
+            height: 80%;
+            width: 90%;
+        }
+        .services-view{
+            height: 80%;
+            width: 90%;
+        }
         .about-view-drop{
-            height: 17rem;
+            height: 100%;
         }
         span.icon {display:inline-block}
         span.text {display:none}
@@ -189,13 +253,14 @@
             height: 100vh; /* Fallback for browsers that do not support Custom Properties */
         }
     }
+    
     /* Scrollbar edit*/
     ::-webkit-scrollbar {
         width: 1rem;
         
     }
     ::-webkit-scrollbar-track {
-        background: var(--cs-light-border);
+        background: var(--cs-light-border) !important;
         border-right: 1px solid var(--cs-dark-border);
     }
     ::-webkit-scrollbar-thumb {
@@ -236,5 +301,8 @@
         border-left: 1px solid var(--cs-dark-border);
         border-bottom: 1px solid var(--cs-light-border);
         border-right: 1px solid var(--cs-light-border);
+    }
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
     }
 }

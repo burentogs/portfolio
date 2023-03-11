@@ -1,87 +1,24 @@
 <template>
-  <div class="bg-cs-dark-green h-full">
-    <div
-      class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col"
-    >
+  <div class="w-full h-full">
+    <div class="flex items-center mx-auto sm:px-4 flex-col">
       <div
-        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0"
+        class="sm:h-1/2 sm:w-1/2 w-36 h-36 inline-flex items-center justify-center"
       >
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="sm:w-16 sm:h-16 w-10 h-10"
-          viewBox="0 0 24 24"
+        <img
+          src="../../assets/story-now.svg"
+          class="w-36 h-36 sm:w-52 sm:h-52"
+          alt="now"
+        />
+      </div>
+      <div class="text-center">
+        <h2 class="cs-yellow text-lg title-font font-medium mb-2">Burentugs</h2>
+        <p
+          class="leading-relaxed text-base bg-cs-dark-green dark-top-border p-4"
         >
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2 class="text-white text-lg title-font font-medium mb-2">
-          Shooting Stars
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
+          Hello, I am a junior full stack developer with a passion for building
+          efficient and user-friendly web applications. I am eager to continue
+          learning and growing my skills in the field.
         </p>
-        <a class="mt-3 text-indigo-400 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col"
-    >
-      <div
-        class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-indigo-400 bg-gray-800 flex-shrink-0"
-      >
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="sm:w-16 sm:h-16 w-10 h-10"
-          viewBox="0 0 24 24"
-        >
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-      </div>
-      <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-        <h2 class="text-white text-lg title-font font-medium mb-2">
-          Shooting Stars
-        </h2>
-        <p class="leading-relaxed text-base">
-          Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-          taxidermy. Gastropub indxgo juice poutine.
-        </p>
-        <a class="mt-3 text-indigo-400 inline-flex items-center"
-          >Learn More
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
       </div>
     </div>
   </div>

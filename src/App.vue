@@ -1,7 +1,7 @@
 <template>
-  <div class="w-screen h-screen">
+  <div class="w-screen h-screen bg-black">
     <div
-      class="sm:bg-background-image bg-no-repeat bg-cover h-screen bg-background-image-sm relative"
+      class="sm:bg-background-image bg-cover h-full bg-background-image-sm relative"
     >
       <div class="panel">
         <router-view />
@@ -32,6 +32,16 @@
           ><span class="text">Project</span>
         </router-link>
         <router-link
+          :to="{ name: 'skills' }"
+          class="hover:cs-yellow menu-out-transition"
+          active-class="menu-active"
+          ><span class="icon">
+            <font-awesome-icon
+              class="menu-icon"
+              icon="fa-solid fa-wand-magic-sparkles" /></span
+          ><span class="text">Skills</span>
+        </router-link>
+        <router-link
           :to="{ name: 'contact' }"
           class="hover:cs-yellow menu-out-transition"
           active-class="menu-active"
@@ -41,17 +51,6 @@
               :icon="['fas', 'paper-plane']"
             /> </span
           ><span class="text">Contact</span>
-        </router-link>
-        <router-link
-          :to="{ name: 'quiz' }"
-          class="hover:cs-yellow menu-out-transition"
-          active-class="menu-active"
-          ><span class="icon">
-            <font-awesome-icon
-              class="menu-icon"
-              :icon="['fas', 'gamepad']"
-            /> </span
-          ><span class="text">Quiz</span>
         </router-link>
       </nav>
       <div class="logo-horizontal">
@@ -68,7 +67,5 @@ export default {
       isActive: false,
     };
   },
-  mounted() {},
-  methods: {},
 };
 </script>
